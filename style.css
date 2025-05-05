@@ -1,0 +1,309 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Alinha o mapa e a barra lateral ao topo */
+}
+
+/* Estilização da seção do logo */
+.logo-section {
+    text-align: center;
+    margin-bottom: 15px; /* Espaço abaixo do logo */
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 100px; /* Ajuste conforme o tamanho desejado do logo */
+}
+
+/* Estilização da barra lateral */
+.sidebar {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-section, .button-section, #info {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.input-section label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-section input[type="text"],
+.input-section textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.input-section textarea {
+    resize: vertical;
+}
+
+.input-section .tle-catalog-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.input-section .tle-catalog-link:hover {
+    text-decoration: underline;
+}
+
+.datetime-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.datetime-container input[type="text"] {
+    flex: 1; /* Faz o input ocupar o espaço restante */
+}
+
+.datetime-container button {
+    padding: 8px 12px;
+    background-color: #28a745;
+}
+
+.datetime-container button:hover {
+    background-color: #218838;
+}
+
+/* Novo container para o seletor de fuso horário */
+.timezone-container {
+    margin: 5px 0; /* Reduz o espaço vertical */
+}
+
+/* Estilização do seletor de fuso horário */
+.timezone-container select {
+    width: 100%; /* Ocupa toda a largura do container */
+    padding: 6px; /* Reduz o padding para torná-lo mais compacto */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em; /* Tamanho de fonte ligeiramente menor */
+    line-height: 1.4; /* Reduz a altura da linha */
+}
+
+.timezone-container select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.button-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#info {
+    background-color: #e9ecef;
+}
+
+#info h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#info p {
+    margin: 8px 0;
+    font-size: 0.95em;
+}
+
+/* Estilização do mapa */
+.map-container {
+    flex: 1;
+    margin-top: 0; /* Garante que o mapa comece alinhado ao topo do container */
+}
+
+#map {
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Estilização da barra de informações acima do mapa */
+.map-info-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 5px 10px; /* Padding reduzido para compacidade */
+    border-radius: 6px 6px 0 0; /* Bordas arredondadas apenas na parte superior */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    gap: 10px; /* Espaço reduzido entre os itens */
+}
+
+.map-info-bar p {
+    margin: 0;
+    font-size: 0.9em; /* Tamanho de fonte menor para compacidade */
+    color: #333;
+    white-space: nowrap; /* Impede quebra de linha nos rótulos */
+}
+
+.map-info-bar p strong {
+    margin-right: 5px;
+}
+
+.coords-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.coords-bar p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #333;
+    flex: 1; /* Permite que o texto ocupe o espaço disponível */
+}
+
+.coords-bar button {
+    padding: 8px 12px;
+    background-color: #28a745;
+}
+
+.coords-bar button:hover {
+    background-color: #218838;
+}
+
+.coords-bar button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.pass-predictions {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    max-height: 300px; /* Limita a altura para evitar que ocupe muito espaço */
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+}
+
+.pass-predictions h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.pass-predictions table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pass-predictions th,
+.pass-predictions td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.pass-predictions th {
+    background-color: #007bff;
+    color: white;
+}
+
+.pass-predictions a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.pass-predictions a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização da seção de links */
+.link-section {
+    margin: 5px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre os elementos */
+}
+
+/* Estilização do separador */
+.link-section .separator {
+    color: #333;
+    font-size: 0.95em;
+}
+
+/* Estilização do link de instruções */
+.link-section .instructions-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.link-section .instructions-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .layout {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+    }
+    
+    .map-container {
+        width: 100%;
+    }
+    
+    #map {
+        height: 500px;
+    }
+}
