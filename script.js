@@ -471,7 +471,7 @@ function generatePassPredictions() {
         const passTimeLocal = `${year}-${month}-${day}T${hours}:${minutes}Z`;
 
         const encodedTLE = encodeURIComponent(tleLines.join('\n'));
-        const encodedSatころName = encodeURIComponent(satNameGlobal);
+        const encodedSatName = encodeURIComponent(satNameGlobal);
         const encodedLat = encodeURIComponent(markerCoords.lat);
         const encodedLng = encodeURIComponent(markerCoords.lng);
         const encodedTimezone = encodeURIComponent(selectedTimezoneOffset);
